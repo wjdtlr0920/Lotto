@@ -1,4 +1,4 @@
-package com.jsik.lottoapplication.di.data
+package com.jsik.lottoapplication.di.database
 
 import android.content.Context
 import org.koin.android.ext.koin.androidApplication

@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.ViewModel
 
 abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes val layoutId: Int) : AppCompatActivity() {
 
@@ -17,5 +18,9 @@ abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes val layoutId: Int) :
         initView()
 
     }
+
     abstract fun initView()
+
+
+
 }

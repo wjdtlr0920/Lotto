@@ -18,9 +18,17 @@ android {
     }
 
     buildTypes {
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", '"www.dhlottery.co.kr/"'
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", "www.dhlottery.co.kr/"
         }
     }
     compileOptions {
@@ -51,4 +59,23 @@ dependencies {
 
     // Koin
     implementation "io.insert-koin:koin-android:3.1.3"
+
+    // Retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    // Gson
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+
+    // Coroutine
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+
+    // Okhttp3
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0"
 }
+

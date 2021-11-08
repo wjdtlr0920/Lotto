@@ -1,7 +1,10 @@
 package com.jsik.lottoapplication.base
 
 import android.app.Application
-import com.jsik.lottoapplication.di.data.sharedModule
+import com.jsik.lottoapplication.di.database.sharedModule
+import com.jsik.lottoapplication.di.network.apiModule
+import com.jsik.lottoapplication.di.network.networkModule
+import com.jsik.lottoapplication.di.network.viewModelModule
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import org.koin.android.ext.koin.androidContext
@@ -17,7 +20,7 @@ class BaseApplication : Application() {
         startKoin{
             androidLogger()
             androidContext(this@BaseApplication)
-            modules(sharedModule)
+            modules(apiModule, sharedModule, networkModule, viewModelModule)
         }
 
     }
