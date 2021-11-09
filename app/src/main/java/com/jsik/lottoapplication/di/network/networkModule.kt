@@ -27,7 +27,4 @@ val networkModule = module {
     }.build()
   }
 
-  single { LottoApi::class.java }
-
-
 }

@@ -1,4 +1,4 @@
-package com.jsik.lottoapplication.net.response
+package com.jsik.lottoapplication.data.response
 
 data class LottoResponse(
     val bnusNo: Int,

@@ -1,6 +1,5 @@
 package com.jsik.lottoapplication.ui.activity.main
 
-import androidx.lifecycle.ViewModelProvider
 import com.jsik.lottoapplication.R
 import com.jsik.lottoapplication.base.ui.activity.BaseActivity
 import com.jsik.lottoapplication.databinding.ActivityMainBinding
@@ -11,7 +10,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
   private val mainViewModel : MainViewModel by viewModel()
 
   override fun initView() {
-//    mainViewModel.getLottoResult()
+    mainViewModel.getLottoResult()
   }
 
 

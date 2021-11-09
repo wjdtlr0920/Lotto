@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -22,13 +23,13 @@ android {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_URL", '"www.dhlottery.co.kr/"'
+            buildConfigField "String", "BASE_URL", '"https://www.dhlottery.co.kr/"'
         }
 
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_URL", "www.dhlottery.co.kr/"
+            buildConfigField "String", "BASE_URL", '"https://www.dhlottery.co.kr/"'
         }
     }
     compileOptions {
@@ -75,7 +76,12 @@ dependencies {
 
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0"
+
     // LiveData
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0"
+
+    // Room
+    implementation "androidx.room:room-runtime:2.3.0"
+    kapt "androidx.room:room-compiler:2.3.0"
 }
 

@@ -1,11 +1,10 @@
 package com.jsik.lottoapplication.net
 
 import com.jsik.lottoapplication.net.api.LottoApi
+import com.jsik.lottoapplication.data.response.LottoResponse
 
-class NetworkClient(val lottoApi: LottoApi) {
+class NetworkClient(private val lottoApi: LottoApi) {
 
-  suspend fun getLottoResult(){
-    lottoApi.getLottoResult(1)
-  }
+  suspend fun getLottoResult(drwNo : Int): LottoResponse = lottoApi.getLottoResult("getLottoNumber", drwNo)
 
 }
