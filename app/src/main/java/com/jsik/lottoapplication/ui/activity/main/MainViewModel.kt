@@ -12,9 +12,13 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(private val networkClient: NetworkClient, private val lottoDao: LottoDao) : ViewModel() {
 
-  fun getLottoResult(){
+
+  /**
+   * 로또 1회부터 현재까지 날짜를 계산해 가져온다
+   * */
+  fun getLottoResult(callback: () -> Unit) {
     CoroutineScope(Dispatchers.IO).launch {
-      for (drwNo in 1..10){
+      for (drwNo in 1..10) {
         val lottoResultModel = LottoResultModel().apply {
           val data = networkClient.getLottoResult(drwNo)
           drwtNo1 = data.drwtNo1

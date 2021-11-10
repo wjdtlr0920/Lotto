@@ -10,8 +10,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
   private val mainViewModel : MainViewModel by viewModel()
 
   override fun initView() {
-    mainViewModel.getLottoResult()
+    mainViewModel.getLottoResult(callback)
   }
+
+  // TODO: 2021-11-10  콜백함수 만들어야함
+  private val callback : () -> Unit = {
+
+  }
+
 
 
 }
