@@ -16,7 +16,7 @@ class MainViewModel(private val networkClient: NetworkClient, private val lottoD
   /**
    * 로또 1회부터 현재까지 날짜를 계산해 가져온다
    * */
-  fun getLottoResult(callback: () -> Unit) {
+  fun getLottoResult() {
     CoroutineScope(Dispatchers.IO).launch {
       for (drwNo in 1..10) {
         val lottoResultModel = LottoResultModel().apply {
