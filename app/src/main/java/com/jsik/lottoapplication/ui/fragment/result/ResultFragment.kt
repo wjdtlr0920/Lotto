@@ -14,4 +14,6 @@ class ResultFragment() : BaseFragment<FragmentResultBinding, ResultViewModel>(R.
 
   }
 
+  override fun initObserver() {}
+
 }

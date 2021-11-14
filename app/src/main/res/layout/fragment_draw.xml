@@ -8,14 +8,97 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/lottoBallContainer"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/header"
+            style="@style/Header"
             android:layout_width="0dp"
             android:layout_height="70dp"
-            android:gravity="center"
+            android:text="@string/fragmentDrawHeader"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lottoNumber1"
+            style="@style/LottoBallYellow"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintEnd_toStartOf="@id/lottoNumber2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lottoNumber2"
+            style="@style/LottoBallYellow"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintBottom_toBottomOf="@id/lottoNumber1"
+            app:layout_constraintEnd_toStartOf="@id/lottoNumber3"
+            app:layout_constraintStart_toEndOf="@id/lottoNumber1"
+            app:layout_constraintTop_toTopOf="@id/lottoNumber1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lottoNumber3"
+            style="@style/LottoBallYellow"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintBottom_toBottomOf="@id/lottoNumber1"
+            app:layout_constraintEnd_toStartOf="@id/plus"
+            app:layout_constraintStart_toEndOf="@id/lottoNumber2"
+            app:layout_constraintTop_toTopOf="@id/lottoNumber1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lottoNumber4"
+            style="@style/LottoBallYellow"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintEnd_toStartOf="@id/lottoNumber5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lottoNumber1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lottoNumber5"
+            style="@style/LottoBallYellow"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintBottom_toBottomOf="@id/lottoNumber4"
+            app:layout_constraintStart_toEndOf="@id/lottoNumber4"
+            app:layout_constraintEnd_toStartOf="@id/lottoNumber6"
+            app:layout_constraintTop_toTopOf="@id/lottoNumber4" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lottoNumber6"
+            style="@style/LottoBallYellow"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintBottom_toBottomOf="@id/lottoNumber4"
+            app:layout_constraintStart_toEndOf="@id/lottoNumber5"
+            app:layout_constraintEnd_toStartOf="@id/plus"
+            app:layout_constraintTop_toTopOf="@id/lottoNumber4" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="+"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/lottoNumber4"
+            app:layout_constraintStart_toEndOf="@id/lottoNumber6"
+            app:layout_constraintEnd_toStartOf="@id/lottoBonusNumber"
+            app:layout_constraintTop_toTopOf="@id/lottoNumber1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lottoBonusNumber"
+            style="@style/LottoBallYellow"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintBottom_toBottomOf="@id/lottoNumber4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/plus"
+            app:layout_constraintTop_toTopOf="@id/lottoNumber1" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/autoCreateNumber"

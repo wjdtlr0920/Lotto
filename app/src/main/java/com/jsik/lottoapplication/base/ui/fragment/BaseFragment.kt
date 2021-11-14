@@ -21,6 +21,7 @@ abstract class BaseFragment < T : ViewDataBinding, V : BaseViewModel>(@LayoutRes
 
   abstract fun getViewModel() : V
   abstract fun initView()
+  abstract fun initObserver()
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
     binding = DataBindingUtil.inflate(layoutInflater, layoutId, container,false)
