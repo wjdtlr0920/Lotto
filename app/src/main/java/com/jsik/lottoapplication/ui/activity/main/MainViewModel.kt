@@ -10,8 +10,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MainViewModel(private val networkClient: NetworkClient, private val lottoDao: LottoDao) : ViewModel() {
-
+class MainViewModel(private val networkClient: NetworkClient, private val lottoDao: LottoDao) : BaseViewModel() {
 
   /**
    * 로또 1회부터 현재까지 날짜를 계산해 가져온다

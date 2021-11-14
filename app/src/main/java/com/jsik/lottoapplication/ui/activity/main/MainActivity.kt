@@ -1,27 +1,30 @@
 package com.jsik.lottoapplication.ui.activity.main
 
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.jsik.lottoapplication.R
 import com.jsik.lottoapplication.base.ui.activity.BaseActivity
 import com.jsik.lottoapplication.databinding.ActivityMainBinding
-import com.jsik.lottoapplication.ui.dialog.LoadingDialog
-import com.jsik.lottoapplication.ui.dialog.TestFragmentDialog
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
+class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.activity_main) {
 
   private val mainViewModel : MainViewModel by viewModel()
 
+  override fun getViewModel() = mainViewModel
   override fun initView() {
 
-    binding.testButton.setOnClickListener {
-
-      TestFragmentDialog().show(supportFragmentManager, "fffff")
-
-//      LoadingDialog(this).show()
-    }
-
+    val navFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainer) as NavHostFragment
+    val navController = navFragment.navController
+    NavigationUI.setupWithNavController(binding.bottomNav, navController)
 
 //    mainViewModel.getLottoResult()
   }
+
+  override fun initObserver() {
+
+  }
+
+
 
 }

@@ -5,25 +5,48 @@ import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import androidx.lifecycle.ViewModel
+import com.jsik.lottoapplication.base.viewmodel.BaseViewModel
+import com.jsik.lottoapplication.ui.dialog.LoadingDialog
 
-abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes val layoutId: Int) : AppCompatActivity() {
+abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel>(@LayoutRes val layoutId: Int) : AppCompatActivity() {
 
-    // TODO: 2021-11-10  로딩 다이얼로그 만들어야함
-//    private val loadingDialog :
+    private val loadingDialog : LoadingDialog by lazy {
+        LoadingDialog(this)
+    }
 
     lateinit var binding: T
+    abstract fun getViewModel() : V
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, layoutId)
         setContentView(binding.root)
         initView()
+        baseObserver()
+        initObserver()
 
     }
+
 
     abstract fun initView()
 
 
+    abstract fun initObserver()
 
+
+    /**
+     * 로딩바 등 베이스 옵저버 등록
+     * */
+    private fun baseObserver(){
+        getViewModel().isLoading.observe(this) {
+            when(it){
+                true -> {
+                    loadingDialog.show()
+                }
+                false -> {
+                    loadingDialog.dismiss()
+                }
+            }
+        }
+    }
 }

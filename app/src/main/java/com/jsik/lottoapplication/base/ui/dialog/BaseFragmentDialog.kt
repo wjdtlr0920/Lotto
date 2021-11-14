@@ -10,6 +10,9 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 
+/**
+ * DialogFragment 상속 버전
+ * */
 abstract class BaseFragmentDialog < T : ViewDataBinding >(@LayoutRes private val layoutId : Int) : DialogFragment() {
 
     lateinit var binding : T

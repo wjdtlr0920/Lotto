@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">LottoApplication</string>
+
+    <!--  fragment_draw  -->
+    <string name="fragmentDrawAutoCreateNumber">자동생성하기</string>
+    <string name="fragmentDrawReset">초기화</string>
 </resources>
