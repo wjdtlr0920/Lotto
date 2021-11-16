@@ -8,6 +8,7 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import com.jsik.lottoapplication.BR
 import com.jsik.lottoapplication.base.viewmodel.BaseViewModel
 import com.jsik.lottoapplication.ui.dialog.LoadingDialog
 
@@ -32,6 +33,11 @@ abstract class BaseFragment < T : ViewDataBinding, V : BaseViewModel>(@LayoutRes
     super.onViewCreated(view, savedInstanceState)
     initView()
     baseObserver()
+    initObserver()
+    binding.apply {
+      lifecycleOwner = this@BaseFragment
+      setVariable(BR.viewModel, getViewModel())
+    }
   }
 
   private fun baseObserver(){

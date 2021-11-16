@@ -14,13 +14,14 @@ class DrawViewModel : BaseViewModel() {
 
 
   /**
-   * 로또 번호 섞어서 6개만 꺼내기
+   * 로또 번호 세팅하기 마지막에 하나 따로 더하는 건 보너스 번호는 소팅 안되게 하기 위함
    * */
-  fun getLottoList() {
-    myLottoList.value = randomLottoList.apply {
-      shuffle()
-      subList(0,7)
+  fun setLottoList() {
+    randomLottoList.shuffle()
+    myLottoList.value = arrayListOf<Int>().apply {
+      addAll(randomLottoList.subList(0,6))
+      sort()
+      add(randomLottoList[6])
     }
   }
-
 }

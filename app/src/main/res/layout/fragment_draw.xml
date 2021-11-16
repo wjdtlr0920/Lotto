@@ -4,6 +4,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="view"
+            type="com.jsik.lottoapplication.ui.fragment.draw.DrawFragment" />
+        <variable
+            name="viewModel"
+            type="com.jsik.lottoapplication.ui.fragment.draw.DrawViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -23,6 +32,7 @@
             style="@style/LottoBallYellow"
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:text="@{viewModel.myLottoList[0].toString()}"
             app:layout_constraintEnd_toStartOf="@id/lottoNumber2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/header" />
@@ -32,6 +42,7 @@
             style="@style/LottoBallYellow"
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:text="@{viewModel.myLottoList[1].toString()}"
             app:layout_constraintBottom_toBottomOf="@id/lottoNumber1"
             app:layout_constraintEnd_toStartOf="@id/lottoNumber3"
             app:layout_constraintStart_toEndOf="@id/lottoNumber1"
@@ -42,6 +53,7 @@
             style="@style/LottoBallYellow"
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:text="@{viewModel.myLottoList[2].toString()}"
             app:layout_constraintBottom_toBottomOf="@id/lottoNumber1"
             app:layout_constraintEnd_toStartOf="@id/plus"
             app:layout_constraintStart_toEndOf="@id/lottoNumber2"
@@ -52,6 +64,7 @@
             style="@style/LottoBallYellow"
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:text="@{viewModel.myLottoList[3].toString()}"
             app:layout_constraintEnd_toStartOf="@id/lottoNumber5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/lottoNumber1" />
@@ -61,6 +74,7 @@
             style="@style/LottoBallYellow"
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:text="@{viewModel.myLottoList[4].toString()}"
             app:layout_constraintBottom_toBottomOf="@id/lottoNumber4"
             app:layout_constraintStart_toEndOf="@id/lottoNumber4"
             app:layout_constraintEnd_toStartOf="@id/lottoNumber6"
@@ -71,6 +85,7 @@
             style="@style/LottoBallYellow"
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:text="@{viewModel.myLottoList[5].toString()}"
             app:layout_constraintBottom_toBottomOf="@id/lottoNumber4"
             app:layout_constraintStart_toEndOf="@id/lottoNumber5"
             app:layout_constraintEnd_toStartOf="@id/plus"
@@ -95,6 +110,7 @@
             style="@style/LottoBallYellow"
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:text="@{viewModel.myLottoList[6].toString()}"
             app:layout_constraintBottom_toBottomOf="@id/lottoNumber4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/plus"
