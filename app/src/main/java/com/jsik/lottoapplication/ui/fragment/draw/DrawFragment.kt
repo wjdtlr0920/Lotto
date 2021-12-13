@@ -22,6 +22,10 @@ class DrawFragment : BaseFragment<FragmentDrawBinding, DrawViewModel>(R.layout.f
     binding.autoCreateNumber.setOnClickListener {
       drawViewModel.setLottoList()
     }
+
+//    drawViewModel.setData()
+    drawViewModel.getData()
+
   }
 
   override fun initObserver() {
